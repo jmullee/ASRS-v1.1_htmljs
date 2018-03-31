@@ -1,0 +1,379 @@
+<html>
+<head>
+<title>Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist</title>
+<style>
+h2 {
+    text-align: center;
+    }
+table {
+    border-collapse: collapse;
+    }
+table, th, td {
+    border: 1px solid black;
+    padding: 4px;
+    }
+td.t {
+    background-color: lightgray;
+    }
+tr:hover {
+    background-color: #5FFFF5;
+    }
+th,td.q {
+    width: 60px;
+    text-align: center;
+    }
+</style>
+<script type="text/javascript">
+    /* check radiobutton if containing cell is clicked */
+    function c(o)
+        {
+        var el, i = 0;
+        while (el = o.childNodes[i++])
+            if ('radio' == el.type)
+                el.checked = true;
+        }
+
+    let vals = [ 0, 1, 2, 3, 4 ] ;
+    function doScore_partA()
+        {
+        var score=0, indications=0;
+        for (q=1; q<7; q++)
+            {
+            threshold = (q < 4) ? 2 : 3;
+
+            for(let v of vals)
+                {
+                var id = "Q"+q+"."+v;
+                var radio = document.getElementById(id);
+                if((null != radio) && (true == radio.checked) && (v >= threshold))
+                    {
+                    score ++;
+                    }
+                }
+            }
+        console.log("score="+score);
+        document.getElementById("score").value = score;
+        }
+</script>
+</head>
+
+<body>
+<h2>Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist</h2>
+<h2>Instructions</h2>
+
+<div><i>The questions on the back page are designed to stimulate dialogue between you and your patients and to help
+confirm if they may be suffering from the symptoms of attention-deficit/hyperactivity disorder (ADHD).</i></div>
+<br/>
+<div>Description: The Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.
+Six of the eighteen questions were found to be the most predictive of symptoms consistent with
+ADHD. These six questions are the basis for the ASRS v1.1 Screener and are also Part A of the
+Symptom Checklist. Part B of the Symptom Checklist contains the remaining twelve questions.</div>
+
+<h3>Instructions:</h3>
+
+<h4>Symptoms</h4>
+<ol>
+    <li>Ask the patient to complete both Part A and Part B of the Symptom Checklist by marking an X
+    in the box that most closely represents the frequency of occurrence of each of the symptoms.</li>
+    <li>Score Part A. If four or more marks appear in the darkly shaded boxes within Part A then the
+    patient has symptoms highly consistent with ADHD in adults and further investigation is
+    warranted.</li>
+    <li>The frequency scores on Part B provide additional cues and can serve as further probes into the
+    patient’s symptoms. Pay particular attention to marks appearing in the dark shaded boxes. The
+    frequency-based response is more sensitive with certain questions. No total score or diagnostic
+    likelihood is utilized for the twelve questions. It has been found that the six questions in Part A
+    are the most predictive of the disorder and are best for use as a screening instrument.</li>
+</ol>
+
+<h4>Impairments</h4>
+<ol>
+    <li>Review the entire Symptom Checklist with your patients and evaluate the level of impairment
+    associated with the symptom.</li>
+    <li>Consider work/school, social and family settings.</li>
+    <li>Symptom frequency is often associated with symptom severity, therefore the Symptom
+    Checklist may also aid in the assessment of impairments. If your patients have frequent
+    symptoms, you may want to ask them to describe how these problems have affected the ability
+    to work, take care of things at home, or get along with other people such as their
+    spouse/significant other.</li>
+</ol>
+
+<h4>History</h4>
+<ol>
+    <li>Assess the presence of these symptoms or similar symptoms in childhood. Adults who have
+    ADHD need not have been formally diagnosed in childhood. In evaluating a patient’s history,
+    look for evidence of early-appearing and long-standing problems with attention or self-control.
+    Some significant symptoms should have been present in childhood, but full symptomology is not
+    necessary.</li>
+</ol>
+
+<h2>Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist</h2>
+
+
+<table>
+    <tr>
+        <td>Today's Date</td><td><input id="todaydate" type="text" width="20" value=""></td>
+        <td>Patient Name</td><td><input type="text" size="70"></td>
+    </tr>
+</table>
+<br>
+<table>
+    <tr>
+        <th colspan="2">
+            Please answer the questions below, rating yourself on each of the criteria shown using the
+            scale on the right side of the page. As you answer each question, place an X in the box that
+            best describes how you have felt and conducted yourself over the past 6 months. Please give
+            this completed checklist to your healthcare professional to discuss during today’s
+            appointment.
+        </th>
+        <th>Never</th>
+        <th>Rarely</th>
+        <th>Sometimes</th>
+        <th>Often</th>
+        <th>Very Often</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?</td>
+        <td onClick="c(this);" class="q"><input id="Q1.0" name="Q1" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q1.1" name="Q1" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q1.2" name="Q1" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q1.3" name="Q1" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q1.4" name="Q1" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>How often do you have difficulty getting things in order when you have to do a task that requires organization?</td>
+        <td onClick="c(this);" class="q"><input id="Q2.0" name="Q2" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q2.1" name="Q2" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q2.2" name="Q2" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q2.3" name="Q2" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q2.4" name="Q2" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>How often do you have problems remembering appointments or obligations?</td>
+        <td onClick="c(this);" class="q"><input id="Q3.0" name="Q3" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q3.1" name="Q3" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q3.2" name="Q3" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q3.3" name="Q3" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q3.4" name="Q3" type="radio"></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>When you have a task that requires a lot of thought, how often do you avoid or delay getting started?</td>
+        <td onClick="c(this);" class="q"><input id="Q4.0" name="Q4" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q4.1" name="Q4" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q4.2" name="Q4" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q4.3" name="Q4" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q4.4" name="Q4" type="radio"></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?</td>
+        <td onClick="c(this);" class="q"><input id="Q5.0" name="Q5" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q5.1" name="Q5" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q5.2" name="Q5" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q5.3" name="Q5" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q5.4" name="Q5" type="radio"></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>How often do you feel overly active and compelled to do things, like you were driven by a motor?</td>
+        <td onClick="c(this);" class="q"><input id="Q6.0" name="Q6" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q6.1" name="Q6" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q6.2" name="Q6" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q6.3" name="Q6" type="radio"></td>
+        <td onClick="c(this);" class="q t"><input id="Q6.4" name="Q6" type="radio"></td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <input type="button" value="Score .." onClick="javascript:doScore_partA();">
+            <input id="score" name="score" type="text" value="" size="5"/>
+            (n of 6 are at-or-above threshold)</td>
+        <td colspan="2">Part A</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>How often do you make careless mistakes when you have to work on a boring or difficult project?</td>
+        <td onClick="c(this);" class="q"><input id="Q7.0" name="Q7" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q7.1" name="Q7" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q7.2" name="Q7" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q7.3" name="Q7" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q7.4" name="Q7" type="radio"></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>How often do you have difficulty keeping your attention when you are doing boring or repetitive work?</td>
+        <td onClick="c(this);" class="q"><input id="Q8.0" name="Q8" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q8.1" name="Q8" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q8.2" name="Q8" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q8.3" name="Q8" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q8.4" name="Q8" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>9</td>
+        <td>How often do you have difficulty concentrating on what people say to you, even when they are speaking to you directly?</td>
+        <td onClick="c(this);" class="q"><input id="Q9.0" name="Q9" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q9.1" name="Q9" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q9.2" name="Q9" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q9.3" name="Q9" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q9.4" name="Q9" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>10</td>
+        <td>How often do you misplace or have difficulty finding things at home or at work?</td>
+        <td onClick="c(this);" class="q"><input id="Q10.0" name="Q10" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q10.1" name="Q10" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q10.2" name="Q10" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q10.3" name="Q10" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q10.4" name="Q10" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>11</td>
+        <td>How often are you distracted by activity or noise around you?</td>
+        <td onClick="c(this);" class="q"><input id="Q11.0" name="Q11" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q11.1" name="Q11" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q11.2" name="Q11" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q11.3" name="Q11" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q11.4" name="Q11" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>12</td>
+        <td>How often do you leave your seat in meetings or other situations in which you are expected to remain seated?</td>
+        <td onClick="c(this);" class="q"><input id="Q12.0" name="Q12" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q12.1" name="Q12" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q12.2" name="Q12" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q12.3" name="Q12" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q12.4" name="Q12" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>13</td>
+        <td>How often do you feel restless or fidgety?</td>
+        <td onClick="c(this);" class="q"><input id="Q13.0" name="Q13" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q13.1" name="Q13" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q13.2" name="Q13" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q13.3" name="Q13" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q13.4" name="Q13" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>14</td>
+        <td>How often do you have difficulty unwinding and relaxing when you have time to yourself?</td>
+        <td onClick="c(this);" class="q"><input id="Q14.0" name="Q14" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q14.1" name="Q14" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q14.2" name="Q14" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q14.3" name="Q14" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q14.4" name="Q14" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>15</td>
+        <td>How often do you find yourself talking too much when you are in social situations?</td>
+        <td onClick="c(this);" class="q"><input id="Q15.0" name="Q15" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q15.1" name="Q15" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q15.2" name="Q15" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q15.3" name="Q15" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q15.4" name="Q15" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>16</td>
+        <td>When you’re in a conversation, how often do you find yourself finishing the sentences of the people you are talking to, before they can finish them themselves?</td>
+        <td onClick="c(this);" class="q"><input id="Q16.0" name="Q16" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q16.1" name="Q16" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q16.2" name="Q16" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q16.3" name="Q16" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q16.4" name="Q16" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>17</td>
+        <td>How often do you have difficulty waiting your turn in situations when turn taking is required?</td>
+        <td onClick="c(this);" class="q"><input id="Q17.0" name="Q17" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q17.1" name="Q17" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q17.2" name="Q17" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q17.3" name="Q17" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q17.4" name="Q17" type="radio"></td>
+    </tr>
+
+    <tr>
+        <td>18</td>
+        <td>How often do you interrupt others when they are busy?</td>
+        <td onClick="c(this);" class="q"><input id="Q18.0" name="Q18" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q18.1" name="Q18" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q18.2" name="Q18" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q18.3" name="Q18" type="radio"></td>
+        <td onClick="c(this);" class="q"><input id="Q18.4" name="Q18" type="radio"></td>
+    </tr>
+    <tr>
+        <td colspan="7">Part B</td>
+    </tr>
+</table>
+
+<h2>The Value of Screening for Adults With ADHD</h2>
+
+<div>Research suggests that the symptoms of ADHD can persist into adulthood, having a significant
+impact on the relationships, careers, and even the personal safety of your patients who may
+suffer from it. 1-4 Because this disorder is often misunderstood, many people who have it do not
+receive appropriate treatment and, as a result, may never reach their full potential. Part of the
+problem is that it can be difficult to diagnose, particularly in adults.</div>
+
+<div>The Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist was developed
+in conjunction with the World Health Organization (WHO), and the Workgroup on Adult
+ADHD that included the following team of psychiatrists and researchers:
+
+<ul>
+    <li>
+        <strong>Lenard Adler, MD</strong><br>
+        Associate Professor of Psychiatry and Neurology<br>
+        New York University Medical School
+    </li>
+    <li>
+        <strong>Ronald C. Kessler, PhD</strong><br>
+        Professor, Department of Health Care Policy
+        Harvard Medical School
+        </li>
+    <li>
+        <strong>Thomas Spencer, MD</strong><br>
+        Associate Professor of Psychiatry<br>
+        Harvard Medical School
+        </li>
+</ul>
+</div>
+
+<div>As a healthcare professional, you can use the ASRS v1.1 as a tool to help screen for ADHD in
+adult patients. Insights gained through this screening may suggest the need for a more in-depth
+clinician interview. The questions in the ASRS v1.1 are consistent with DSM-IV criteria and
+address the manifestations of ADHD symptoms in adults. Content of the questionnaire also
+reflects the importance that DSM-IV places on symptoms, impairments, and history for a correct
+diagnosis.<sup><a href="https://dsm.psychiatryonline.org/doi/abs/10.1176/appi.books.9780890420249.dsm-iv-tr">4</a></sup></div>
+
+<div>
+The checklist takes about 5 minutes to complete and can provide information that is critical
+to supplement the diagnostic process.
+</div>
+
+<div>
+
+<h3>References:</h3>
+<ol>
+    <li><a href="https://www.ncbi.nlm.nih.gov/pubmed/11349483">Schweitzer JB, et al. Med Clin North Am. 2001;85(3):10-11, 757-777.</a<</li>
+    <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2247447/">Barkley RA. Attention Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment. 2nd ed. 1998.</a></li>
+    <li><a href="https://www.ncbi.nlm.nih.gov/pubmed/8238632">Biederman J, et al. Am J Psychiatry.1993;150:1792-1798.</a></li>
+    <li><a href="https://dsm.psychiatryonline.org/doi/abs/10.1176/appi.books.9780890420249.dsm-iv-tr">American Psychiatric Association: Diagnostic and Statistical Manual of Mental Disorders, Fourth Edition, Text Revision.
+    Washington, DC, American Psychiatric Association. 2000: 85-93.</a></li>
+</ol>
+</div>
+
+<script>
+    document.getElementById("todaydate").value = (new Date(Date.now())).toLocaleString();
+</script>
+</body>
+</html>
